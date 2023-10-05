@@ -32,3 +32,8 @@ get_infection_data <- function(cache = T, data_url = NULL) {
                   county = tolower(county)) |>
     dplyr::ungroup()
 }
+
+# TODO: Find data source and implement
+get_vax_data <- function(data_url = NULL) {
+
+}
