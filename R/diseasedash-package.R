@@ -3,6 +3,7 @@
 #'     theme guides labs guide_legend element_text element_blank
 #' @importFrom stringr str_to_sentence
 #' @importFrom utils read.csv
+#' @importFrom purrr map_dfr
 "_PACKAGE"
 
 utils::globalVariables(c("region", "subregion", "long", "lat",

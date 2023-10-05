@@ -9,7 +9,7 @@ write_cache(data, data_type)
 \arguments{
 \item{data}{The data to write to the cache}
 
-\item{data_type}{The type of data you are saving. Either "cases" or "vax. Used to update the log}
+\item{data_type}{The type of data you are saving. Either "cases" or "vax". Used to update the log}
 }
 \value{
 No return
