@@ -14,5 +14,5 @@ A data.frame containing the data types stored in the cache and the
 Reads the DiseaseDash cache info file if it exists. Returns NULL otherwise
 }
 \examples{
-cache_info <- get_cache_info()
+\dontrun{cache_info <- get_cache_info()}
 }

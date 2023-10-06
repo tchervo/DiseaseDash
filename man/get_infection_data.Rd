@@ -22,5 +22,5 @@ changed, you can specify an updated URL using the data_url parameter. Most users
 won't need this function, but it is here if you want to look at the data yourself
 }
 \examples{
-covid_dat = get_infection_data()
+\dontrun{covid_dat = get_infection_data()}
 }

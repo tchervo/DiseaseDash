@@ -19,3 +19,14 @@ The report passed to this function with modified data
 \description{
 Modify the data in a DiseaseDash report
 }
+\examples{
+\dontrun{
+  library(dplyr)
+
+  my_report <- report(type = "cases",
+                      region = "california",
+                      start = as.Date("2021-11-01"),
+                      end = as.Date("2022-01-01")) \%>\%
+              modify_data(~filter(.x, county \%in\% c("alameda", "san francisco")))
+}
+}

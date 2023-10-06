@@ -4,22 +4,50 @@
 \alias{disease_dash}
 \title{Initialize a DiseaseDash report}
 \usage{
-disease_dash(type, region, load_cache = T, save_cache = T)
+disease_dash(
+  type,
+  region,
+  start,
+  end,
+  include_bounds = T,
+  load_cache = T,
+  save_cache = T,
+  data_url = NULL
+)
 }
 \arguments{
 \item{type}{The type of report to make. Either "cases" or "vax"}
 
 \item{region}{The region you want to show the data for. Either a U.S state or "national" for the whole U.S}
 
+\item{start}{The start date of the time interval to include in the report. Should be a date object}
+
+\item{end}{The end date that should be included in the report. Should be a date object}
+
+\item{include_bounds}{Optional. Whether start and end should be included in the dates. Default is TRUE}
+
 \item{load_cache}{Whether or not to load data from the cache. Recommended if you are running multiple reports.
 Default is TRUE.}
 
 \item{save_cache}{Whether or not to save data from the cache if you are downloading from a data source.
 Default is TRUE.}
+
+\item{data_url}{Optional. An alternate URL pointing to the NYT COVID-19 data}
 }
 \value{
 A DiseaseDash report object that can be piped through to other report functions
 }
 \description{
 Initialize a DiseaseDash report
+}
+\examples{
+\dontrun{
+ library(dplyr)
+
+  my_report <- report(type = "cases",
+                      region = "california",
+                      start = as.Date("2021-11-01"),
+                      end = as.Date("2022-01-01")) \%>\%
+              add_plot("cases")
+}
 }

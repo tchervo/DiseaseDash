@@ -16,5 +16,5 @@ A data.frame containing data on either COVID-19 cases or vaccinations
 Read a data type from the DiseaseDash cache
 }
 \examples{
-cases_data <- read_cache("cases")
+\dontrun{cases_data <- read_cache("cases")}
 }

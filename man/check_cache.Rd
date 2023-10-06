@@ -16,7 +16,9 @@ TRUE if the data type is stored in the cache, FALSE otherwise
 Check if a file exists in the DiseaseDash cache
 }
 \examples{
-if (check_cache("vax")) {
-   # Do something here
+\dontrun{
+  if (check_cache("vax")) {
+     # Do something here
+   }
 }
 }

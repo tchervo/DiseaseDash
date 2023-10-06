@@ -19,3 +19,15 @@ The report passed to this data with a modified plot
 \description{
 Modify the plot in a DiseaseDash report
 }
+\examples{
+\dontrun{
+  library(dplyr)
+
+  my_report <- report(type = "cases",
+                      region = "california",
+                      start = as.Date("2021-11-01"),
+                      end = as.Date("2022-01-01")) \%>\%
+              add_plot("cases") \%>\%
+              modify_plot(function (x) x + ggplot2::labs(title = "Cases in California"))
+}
+}

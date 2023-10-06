@@ -6,7 +6,7 @@ Author: Tyler Chervo
 Maintainer: Tyler Chervo <tylerchervo@me.com>
 Description: This package utilizes data from the NYT COVID-19 tracking project
     to create informative dashboards at the national and state level.
-Imports: dplyr, ggplot2, stringr
+Imports: dplyr, ggplot2, stringr, purrr, grid, gridExtra, flextable, magick, maps
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

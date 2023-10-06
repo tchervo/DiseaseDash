@@ -18,7 +18,9 @@ No return
 Write to the DiseaseDash cache
 }
 \examples{
-cases_data <- get_infection_data()
+\dontrun{
+  cases_data <- get_infection_data()
 
-write_cache(cases_data, "cases")
+  write_cache(cases_data, "cases")
+}
 }
