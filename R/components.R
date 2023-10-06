@@ -10,7 +10,7 @@
 #'
 #' @param report The DiseaseDash report to add a plot to
 #' @param outcome The outcome to be displayed in the plot. Either "cases" or "deaths"
-#' @param colors The colors corresponding to the low, medium, and high points on the plot
+#' @param colors The colors corresponding to the low, medium, and high points on the plot. Defaults are green, red, and violet shades.
 #'
 #' @return The DiseaseDash report object with a plot added
 #' @export
@@ -75,6 +75,30 @@ add_plot <- function(report, outcome,
   report
 }
 
+#' Add a table to a DiseaseDash report
+#'
+#' @description
+#' Adds a table from **{flextable}** showing cases or deaths in the region
+#' specified in the report. Note that the **{magick}** package is required to be
+#' installed to render tables in a report
+#'
+#'
+#' @param report The report you are adding the table to
+#' @param outcome Whether cases or deaths are being displayed. Should be either "cases" or "deaths"
+#' @param rows How many rows the table should contain. Default is 5.
+#' @param order Whether the rows should be sorted in ascending or descending order. Should be either "ascending" or "descending"
+#'
+#' @return The report with a table added to it
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'   my_report <- disease_dash(type = "cases",
+#'                            region = "california",
+#'                            start =  as.Date("2021-04-01"),
+#'                            end = as.Date("2021-05-01")) %>%
+#'               add_table("cases")
+#' }
 add_table <- function(report, outcome, rows = 5, order = "desc") {
   out_col <- ifelse(outcome == "cases",
                     "tot_change_cases",
