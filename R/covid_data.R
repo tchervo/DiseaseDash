@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @examples
-#' covid_dat = get_infection_data()
+#' \dontrun{covid_dat = get_infection_data()}
 get_infection_data <- function(cache = T, data_url = NULL) {
   if (is.null(data_url)) {
     dat = read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
