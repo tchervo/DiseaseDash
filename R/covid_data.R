@@ -26,7 +26,8 @@ get_infection_data <- function(cache = T, data_url = NULL) {
   dat |>
     dplyr::arrange(state, county, date) |>
     dplyr::group_by(county, state) |>
-    dplyr::mutate(change_cases = cases - dplyr::lag(cases, default = 0),
+    dplyr::mutate(date = as.Date(date),
+                  change_cases = cases - dplyr::lag(cases, default = 0),
                   change_deaths = deaths - dplyr::lag(deaths, default = 0),
                   state = tolower(state),
                   county = tolower(county)) |>

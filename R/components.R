@@ -86,7 +86,7 @@ add_plot <- function(report, outcome,
 #' @param report The report you are adding the table to
 #' @param outcome Whether cases or deaths are being displayed. Should be either "cases" or "deaths"
 #' @param rows How many rows the table should contain. Default is 5.
-#' @param order Whether the rows should be sorted in ascending or descending order. Should be either "ascending" or "descending"
+#' @param order Whether the rows should be sorted in ascending or descending order. Should be either "asc" or "desc"
 #'
 #' @return The report with a table added to it
 #' @export
@@ -100,6 +100,10 @@ add_plot <- function(report, outcome,
 #'               add_table("cases")
 #' }
 add_table <- function(report, outcome, rows = 5, order = "desc") {
+  stopifnot(class(report) == "DiseaseDashReport")
+  stopifnot(outcome %in% c("cases", "deaths"))
+  stopifnot(order %in% c("asc", "desc"))
+
   out_col <- ifelse(outcome == "cases",
                     "tot_change_cases",
                     "tot_change_deaths")

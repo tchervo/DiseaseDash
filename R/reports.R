@@ -130,7 +130,6 @@ disease_dash <- function(type, region, start, end, include_bounds = T,
 #' }
 build_report <- function(report, new_title = NULL) {
   stopifnot(class(report) == "DiseaseDashReport")
-  stopifnot(length(new_text) <= 3)
 
   has_plot <- !is.null(report[["plot"]])
   has_table <- !is.null(report[["table"]])

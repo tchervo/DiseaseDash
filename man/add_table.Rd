@@ -13,7 +13,7 @@ add_table(report, outcome, rows = 5, order = "desc")
 
 \item{rows}{How many rows the table should contain. Default is 5.}
 
-\item{order}{Whether the rows should be sorted in ascending or descending order. Should be either "ascending" or "descending"}
+\item{order}{Whether the rows should be sorted in ascending or descending order. Should be either "asc" or "desc"}
 }
 \value{
 The report with a table added to it

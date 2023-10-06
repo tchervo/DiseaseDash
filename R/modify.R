@@ -1,7 +1,7 @@
 #' Modify the data in a DiseaseDash report
 #'
 #' @param report The report you want to modify
-#' @param fn The function you would like to apply to the data. Supports **{purrr}** style formulas
+#' @param fn The function you would like to apply to the data.
 #' @param ... Additional arguments for `fn` if needed
 #'
 #' @return The report passed to this function with modified data
@@ -18,7 +18,7 @@
 #'               modify_data(~filter(.x, county %in% c("alameda", "san francisco")))
 #' }
 modify_data <- function(report, fn, ...) {
-  if (is.null(report$table)) stop("This report does not have a table!")
+  stopifnot(class(report) == "DiseaseDashReport")
 
   report$data <- list(report$data) %>%
     purrr::map_dfr(fn, ...)
@@ -29,7 +29,7 @@ modify_data <- function(report, fn, ...) {
 #' Modify the plot in a DiseaseDash report
 #'
 #' @param report The report you want to modify
-#' @param fn The function you would like to apply to the plot. Supports **{purrr}** style formulas
+#' @param fn The function you would like to apply to the plot.
 #' @param ... Additional arguments for `fn` if needed
 #'
 #' @return The report passed to this data with a modified plot
@@ -49,8 +49,9 @@ modify_data <- function(report, fn, ...) {
 modify_plot <- function(report, fn, ...) {
   if (is.null(report$plot)) stop("This report does not have a plot!")
 
-  report$plot <- list(report$plot) %>%
-    purrr::map(fn, ...)
+  args <- list(x = report$plot, ...)
+
+  report$plot <- do.call(fn, args)
 
   report
 }

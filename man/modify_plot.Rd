@@ -9,7 +9,7 @@ modify_plot(report, fn, ...)
 \arguments{
 \item{report}{The report you want to modify}
 
-\item{fn}{The function you would like to apply to the plot. Supports **{purrr}** style formulas}
+\item{fn}{The function you would like to apply to the plot.}
 
 \item{...}{Additional arguments for `fn` if needed}
 }
